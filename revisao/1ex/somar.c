@@ -1,28 +1,29 @@
 #include <stdio.h>
 
+int soma(int quantidade);
+
 int main () {
     int quantidade;
 
     printf("Digite a quantidade de numeros inteiros: ");
     scanf("%d", &quantidade);
 
-    int numeros;
-    int auxiliar = 0;
+    int Soma = soma(quantidade);
 
-
-    for(int i = 0; i < quantidade; i++) {
-        printf("Numero %d: ", i + 1);
-        scanf("%d", &numeros);
-
-        auxiliar = auxiliar + numeros;
-    }
-
-    int media = auxiliar / quantidade;
-    
-    printf("Total de numeros e: %d\n", quantidade);
-    printf("Soma de numero e: %d\n", auxiliar);
-    printf("Media: %d", media);
+    printf("A soma e: %d\n", Soma);
+    printf("A media e: %d", Soma / quantidade);
 
 
     return 0;
+}
+
+int soma(int quantidade) {
+    int numeros;
+    if(quantidade == 0) {
+        return 0;
+    } else {
+        printf("Numero: ");
+        scanf("%d", &numeros);
+        return numeros + soma(quantidade - 1);
+    }
 }
