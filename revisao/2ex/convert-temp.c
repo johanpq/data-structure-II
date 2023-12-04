@@ -1,35 +1,21 @@
 #include <stdio.h>
 
-float FahrenheitFunction(float Celsius);
+void FahrenheitFunction(int Celsius);
 
 int main() {
 
-    float Fahrenheit;
-    float Celsius;
-
-    printf("Informe a temperatura em Celsius: ");
-    scanf("%f", &Celsius);
-    
-    Fahrenheit = FahrenheitFunction(Celsius);
-    
-    printf("Celsius -> Fahrenheit = %.f\n", Fahrenheit);
-
+    FahrenheitFunction(30);
 
     return 0;
 }
 
-float FahrenheitFunction(float Celsius) {
-    float Fahrenheit;
-    if(Celsius >= 30 && Celsius <=50) {
+void FahrenheitFunction(int Celsius) {
+    int Fahrenheit;
+
+    if(Celsius >= 30 && Celsius <= 50) {
         Fahrenheit = Celsius + 32;
-        return Fahrenheit;
-    } else {
-        while(Celsius < 30 && Celsius < 50) {
-            printf("Informou errado! Tente entre 30-50!\n");
-            scanf("%f", &Celsius);
-            Fahrenheit = Celsius + 32;
-        }
-        return Fahrenheit;
+        printf("Celsius = %d\t Fahrenheit = %d\t", Celsius, Fahrenheit);
+        FahrenheitFunction(Celsius + 1); // loop
     }
 
 }
