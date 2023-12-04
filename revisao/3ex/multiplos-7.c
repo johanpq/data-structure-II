@@ -1,16 +1,25 @@
 #include <stdio.h>
 
+int Multiplo(int mult, int i);
+
 int main() {
 
-    int mult, soma = 0;
+    int multiplicacao = Multiplo(7, 1);
 
-    for(int i = 1; i <= 100; i++) {
-        mult = 7 * i;
-        soma = soma + mult;
-        printf("%d\n", mult);
-    }
-    
-    printf("Soma e: %d", soma);
+   /*  printf("Soma e: %d", soma); */
 
     return 0;
 }
+
+int Multiplo(int mult, int i) {
+    int multiplicacao, soma;
+
+    if(mult <= 700) {
+        multiplicacao = mult * i;
+        printf("%d\n", mult);
+        mult += 7;
+        soma = soma + multiplicacao;
+        return Multiplo(mult, i + 1);
+    }
+}
+
