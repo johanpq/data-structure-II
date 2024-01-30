@@ -1,0 +1,1 @@
+# Arvore é uma estrtura para uma busca binária
